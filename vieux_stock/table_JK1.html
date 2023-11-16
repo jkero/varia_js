@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--
+<link href="https://cdn.datatables.net/v/dt/dt-1.13.7/datatables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.7/datatables.min.js"></script>
+-->
+<link rel="stylesheet" href="datatables.min.css">
+<link rel="json" href="les_plantes_5a.json">
+<script src="../plantes/js/jquery371.js"></script>
+<script src="datatables.min.js"></script>
+<script src="datatables.js"></script>
+    <script src="jquery.dataTables.js"></script>
+    <script src="editor.js"></script>
+    <script src="buttons.js"></script>
+
+</head>
+<body>
+
+<script>let
+table = new DataTable('#example');
+const editor = DataTable.Editor({
+    ajax: 'les_plantes_5a.json',
+    url:'les_plantes_5a.json',
+    fields: [
+        {
+            label: 'id:',
+            name: 'id'
+        },
+        {
+            label: 'nom,:',
+            name: 'nom'
+        },
+        {
+            label: 'ec_min:',
+            name: 'ec_min'
+        },
+        {
+            label: 'ec max:',
+            name: 'ec_max'
+        },
+        {
+            label: 'ph min:',
+            name: 'ph_min'
+        },
+        {
+            label: 'ph max:',
+            name: 'ph_max'
+        },
+        {
+            label: 'prod:',
+            name: 'prod'
+        }
+    ],
+    table: '#example'
+});
+new DataTable('#example', {
+    ajax: 'les_plantes_5a.json',
+    url: 'les_plantes_5a.json',
+    buttons: [
+        { extend: 'create', editor },
+        { extend: 'edit', editor },
+        { extend: 'remove', editor }
+    ],
+    columns: [
+    {les_plantes:'id'},
+    {les_plantes:'nom'},
+    {les_plantes:'ec_min'},
+    {les_plantes:'ec_max'},
+    {les_plantes:'ph_min'},
+    {les_plantes:'ph_max'},
+    {les_plantes:'prod'}
+    ]
+} );
+
+</script>
+<table id="example" class="display">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>nom</th>
+            <th>ec_min</th>
+            <th>ec_max</th>
+            <th>ph_min</th>
+            <th>ph_max</th>
+            <th>prod</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
